@@ -30,7 +30,7 @@ async def entrypoint(ctx: JobContext):
         messages=[
             ChatMessage(
                 role="system",
-                content="You are the Groq voice assistant. Be nice. Your interaction with the user will via voice.",
+                content="",
             )
         ]
     )
@@ -40,7 +40,7 @@ async def entrypoint(ctx: JobContext):
         vad=ctx.proc.userdata["vad"],
         stt=groq.STT(),
         llm=groq.LLM(),
-        tts=groq.TTS(voice="Cheyenne-PlayAI"),
+        tts=groq.TTS(),
         chat_ctx=initial_ctx,
     )
 
